@@ -13,7 +13,14 @@ spec:
       type: string
       default: "tax-calculator-app"
   tasks:
+    - name: install-dependencies
+      taskRef:
+        name: npm-install
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
     - name: test
+      runAfter: [install-dependencies]
       taskRef:
         name: jasmine-test
       workspaces:
