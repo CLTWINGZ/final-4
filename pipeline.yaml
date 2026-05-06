@@ -19,7 +19,7 @@ spec:
     - name: tests
       runAfter: [npminstall]
       taskRef:
-        name: jasmine
+        name: Jasmine
       workspaces:
         - name: source
           workspace: pipeline-workspace

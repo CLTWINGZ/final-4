@@ -15,12 +15,12 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: jasmine
+  name: Jasmine
 spec:
   workspaces:
     - name: source
   steps:
-    - name: test
+    - name: unit-test
       image: node:18-slim
       workingDir: $(workspaces.source.path)
       script: |
