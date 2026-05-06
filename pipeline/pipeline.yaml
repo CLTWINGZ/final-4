@@ -9,42 +9,27 @@ spec:
     - name: image-name
       type: string
       default: "us.icr.io/tax-calculator/app:latest"
-    - name: application-name
-      type: string
-      default: "tax-calculator-app"
   tasks:
-    - name: install-dependencies
+    - name: npminstall
       taskRef:
-        name: npm-install
+        name: npm
       workspaces:
         - name: source
           workspace: pipeline-workspace
-    - name: test
-      runAfter: [install-dependencies]
+    - name: tests
+      runAfter: [npminstall]
       taskRef:
-        name: jasmine-test
+        name: jasmine
       workspaces:
         - name: source
           workspace: pipeline-workspace
     - name: build
-      runAfter: [test]
+      runAfter: [tests]
       taskRef:
-        name: build-and-push
+        name: build
       params:
         - name: image
           value: $(params.image-name)
-      workspaces:
-        - name: source
-          workspace: pipeline-workspace
-    - name: deploy
-      runAfter: [build]
-      taskRef:
-        name: deploy-to-cloud
-      params:
-        - name: image
-          value: $(params.image-name)
-        - name: app-name
-          value: $(params.application-name)
       workspaces:
         - name: source
           workspace: pipeline-workspace

@@ -8,8 +8,6 @@ spec:
   params:
     - name: image-name
       value: "us.icr.io/tax-calculator/app:latest"
-    - name: application-name
-      value: "tax-calculator-app"
   workspaces:
     - name: pipeline-workspace
       persistentVolumeClaim:
