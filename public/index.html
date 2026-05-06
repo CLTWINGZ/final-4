@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxCalc Pro | Modern Tax Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                Tax<span>Calc</span> Pro
+            </div>
+            <nav>
+                <a href="#" class="active">Calculator</a>
+                <a href="#">Guides</a>
+                <a href="#">Resources</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <h1>Tax Estimator</h1>
+                    <p>Calculate your estimated tax liability based on 2024 brackets.</p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="income">Annual Gross Income</label>
+                    <div class="input-wrapper">
+                        <span class="currency">$</span>
+                        <input type="number" id="income" placeholder="e.g. 75,000" min="0">
+                    </div>
+                </div>
+
+                <button id="calculateBtn" class="btn-primary">
+                    <i class="fas fa-calculator"></i> Calculate My Tax
+                </button>
+
+                <div id="resultContainer" class="result-container hidden">
+                    <div class="result-divider"></div>
+                    <div class="result-item">
+                        <span>Total Tax Liability:</span>
+                        <span id="taxValue" class="value">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Effective Tax Rate:</span>
+                        <span id="rateValue" class="value">0.00%</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span>Take-Home Pay:</span>
+                        <span id="netValue" class="value">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="info-sidebar">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> Why TaxCalc Pro?</h3>
+                    <p>Our algorithm uses the latest progressive tax brackets to ensure maximum accuracy for your financial planning.</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-shield-alt"></i> Secure & Private</h3>
+                    <p>We do not store your data. All calculations are performed instantly.</p>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 TaxCalc Pro. Part of the IBM DevOps Final Project.</p>
+        </footer>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
